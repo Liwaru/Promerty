@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="none" fill="none">
+  <defs>
+    <linearGradient id="curve" x1="0" y1="1" x2=".8" y2="0">
+      <stop stop-color="white" stop-opacity="0"/><stop offset=".4" stop-color="white" stop-opacity=".8"/><stop offset=".66" stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="facade" x1="1450" y1="200" x2="1450" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0"/><stop offset=".25" stop-color="white" stop-opacity=".5"/><stop offset=".65" stop-color="white" stop-opacity=".6"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="canopy" x1="1370" y1="130" x2="1600" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0"/><stop offset=".6" stop-color="white" stop-opacity=".07"/><stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <!-- One geometry family for both themes; CSS supplies all metallic color. -->
+  <path d="M1360 202 1600 110V218l-150 56Z" fill="url(#canopy)"/>
+  <g stroke="url(#facade)" stroke-width="1.4">
+    <polyline points="1370,900 1370,310 1540,246 1600,270"/>
+    <polyline points="1390,900 1390,324 1540,268 1600,291"/>
+    <path d="M1422 312v588m40-603v603m40-618v618m38-654v654m40-638v638"/>
+    <polyline points="1390,408 1540,352 1600,375"/><polyline points="1390,492 1540,436 1600,459"/>
+    <polyline points="1390,576 1540,520 1600,543"/><polyline points="1390,660 1540,604 1600,627"/>
+    <polyline points="1390,744 1540,688 1600,711"/><polyline points="1390,828 1540,772 1600,795"/>
+  </g>
+  <path d="M410 170C700 145 950 5 1240-10s440 65 550 20" stroke="url(#curve)" stroke-width="3"/>
+  <path d="M-70 905c140-130 230-180 360-210s190-25 275-100" stroke="url(#curve)" stroke-width="2.2" opacity=".72"/>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 260" fill="none">
+  <defs>
+    <linearGradient id="gold" x1="36" y1="230" x2="306" y2="72" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D4AF37" stop-opacity=".08"/>
+      <stop offset=".52" stop-color="#E6C96A" stop-opacity=".62"/>
+      <stop offset="1" stop-color="#D4AF37" stop-opacity=".12"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="60" y1="232" x2="298" y2="100" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D4AF37" stop-opacity="0"/>
+      <stop offset=".72" stop-color="#E6C96A" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#E6C96A" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path d="M0 238c49-4 68-21 107-20 38 1 58 17 98 9 43-8 73-41 155-51" stroke="url(#gold)" stroke-width="1.2"/>
+  <path d="M0 248c58-1 86-23 127-19 31 3 54 17 91 8 48-11 74-39 142-47" stroke="url(#glow)" stroke-width="8"/>
+  <path d="M34 235v-41l14-13v54m-9-43h8m-8 7h8m-8 7h8m-8 7h8m-8 7h8m-8 7h8M59 235V157l19-18v96m-13-77h12m-12 9h12m-12 9h12m-12 9h12m-12 9h12m-12 9h12m-12 9h12m-12 9h12m-12 9h12M84 235v-30l13-11v41m-9-36h8m-8 7h8m-8 7h8m-8 7h8m-8 7h8M264 225V113l26-22v128m-17-105h17m-17 11h17m-17 11h17m-17 11h17m-17 11h17m-17 11h17m-17 11h17m-17 11h17m-17 11h17m-17 11h17m-17 11h17m7 0v-78l17-15v93m-12-79h11m-11 10h11m-11 10h11m-11 10h11m-11 10h11m-11 10h11m-11 10h11m-11 10h11" stroke="url(#gold)" stroke-width=".85"/>
+  <path d="m257 120 34-30 19 12M72 150l7-12 7 5m183-31 21-20 17 12" stroke="url(#gold)" stroke-width=".8"/>
+  <path d="M0 238h360" stroke="url(#gold)" stroke-opacity=".35"/>
+</svg>

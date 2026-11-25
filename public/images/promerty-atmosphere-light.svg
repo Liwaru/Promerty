@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="none" fill="none">
+  <defs>
+    <linearGradient id="brass" x1="0" y1="1" x2=".8" y2="0">
+      <stop stop-color="#A67C00" stop-opacity="0"/>
+      <stop offset=".34" stop-color="#A67C00" stop-opacity=".8"/>
+      <stop offset=".5" stop-color="#D4AF37"/>
+      <stop offset=".61" stop-color="#E4BD4B"/>
+      <stop offset=".64" stop-color="#F2D675"/>
+      <stop offset=".68" stop-color="#D4AF37"/>
+      <stop offset=".82" stop-color="#A67C00" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#D4AF37" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <defs>
+    <linearGradient id="ivory-plane" x1="1300" y1="150" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D4AF37" stop-opacity=".12"/><stop offset=".5" stop-color="#F6F3EA" stop-opacity=".7"/><stop offset="1" stop-color="#D4AF37" stop-opacity=".08"/>
+    </linearGradient>
+    <linearGradient id="facade" x1="1350" y1="250" x2="1600" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A67C00" stop-opacity=".06"/><stop offset=".65" stop-color="#D4AF37" stop-opacity=".38"/><stop offset="1" stop-color="#A67C00" stop-opacity=".15"/>
+    </linearGradient>
+  </defs>
+  <!-- Folded ivory planes and a perspective facade sit outside the editorial reading area. -->
+  <polygon points="1340,140 1600,42 1600,900 1480,900 1480,320" fill="url(#ivory-plane)"/>
+  <polygon points="1460,244 1600,190 1600,900 1460,900" fill="#FFFDF9" fill-opacity=".64"/>
+  <g stroke="url(#facade)" stroke-width="1.25">
+    <polyline points="1370,900 1370,310 1540,246 1600,270"/>
+    <polyline points="1390,900 1390,324 1540,268 1600,291"/>
+    <polyline points="1422,900 1422,312 1422,900"/>
+    <polyline points="1462,900 1462,297 1462,900"/>
+    <polyline points="1502,900 1502,282 1502,900"/>
+    <polyline points="1540,900 1540,246 1540,900"/>
+    <polyline points="1580,900 1580,262 1580,900"/>
+    <polyline points="1390,408 1540,352 1600,375"/>
+    <polyline points="1390,492 1540,436 1600,459"/>
+    <polyline points="1390,576 1540,520 1600,543"/>
+    <polyline points="1390,660 1540,604 1600,627"/>
+    <polyline points="1390,744 1540,688 1600,711"/>
+    <polyline points="1390,828 1540,772 1600,795"/>
+  </g>
+  <polygon points="240,900 240,776 470,716 470,900" fill="url(#ivory-plane)" opacity=".65"/>
+  <path d="M410 170C700 145 950 5 1240-10s440 65 550 20" stroke="url(#brass)" stroke-width="4.8"/>
+  <path d="M-70 905c140-130 230-180 360-210s190-25 275-100" stroke="url(#brass)" stroke-width="3.2" opacity=".95"/>
+</svg>

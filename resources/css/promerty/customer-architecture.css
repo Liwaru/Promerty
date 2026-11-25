@@ -1,0 +1,81 @@
+/* One decorative structure; four material roles adapt to the active theme. */
+@layer components {
+    :is(.f-app,.ws-sidebar) {
+        --architecture-ambient:color-mix(in srgb,var(--brand-gold-primary) 16%,transparent);
+        --architecture-light:color-mix(in srgb,var(--brand-gold-soft) 9%,transparent);
+        --architecture-metallic:linear-gradient(125deg,var(--brand-gold-bronze) 8%,var(--brand-gold-champagne) 42%,var(--brand-gold-soft) 61%,var(--brand-gold-primary) 76%,var(--brand-gold-bronze));
+        --architecture-accent:linear-gradient(115deg,var(--brand-gold-soft),var(--brand-gold-primary) 46%,var(--brand-gold-deep));
+        --architecture-accent-hover:linear-gradient(115deg,var(--brand-gold-soft),var(--brand-gold-primary) 66%,var(--brand-gold-deep));
+        --architecture-surface:color-mix(in srgb,var(--color-bg) 97%,var(--brand-gold-primary));
+        --architecture-edge:color-mix(in srgb,var(--brand-gold-champagne) 35%,var(--color-bg));
+        --architecture-shadow:color-mix(in srgb,var(--color-bg) 70%,transparent);
+        --architecture-ink:var(--brand-gold-soft);
+        --architecture-opacity:.72;
+        --architecture-sidebar-opacity:.62;
+        --architecture-art-width:2.6;
+        background-image:var(--architecture-background,
+            radial-gradient(ellipse at 100% 22%,var(--architecture-ambient),transparent 42rem),
+            radial-gradient(ellipse at 13% 95%,var(--architecture-light),transparent 30rem),
+            linear-gradient(145deg,var(--architecture-surface),var(--color-bg) 42%));
+    }
+    [data-theme="light"] :is(.f-app,.ws-sidebar) {
+        --architecture-ambient:color-mix(in srgb,var(--brand-gold-champagne) 24%,transparent);
+        --architecture-light:color-mix(in srgb,var(--brand-gold-champagne) 15%,transparent);
+        --architecture-background:radial-gradient(ellipse min(32rem,38vw) 82vh at 103% 30%,var(--architecture-ambient),color-mix(in srgb,var(--brand-light-champagne-surface) 14%,transparent) 55%,transparent 85%),linear-gradient(145deg,var(--brand-light-porcelain),var(--brand-light-ivory) 48%);
+        --architecture-edge-light:radial-gradient(ellipse min(20rem,23vw) 64vh at 100% 64%,color-mix(in srgb,var(--brand-gold-champagne) 12%,transparent),transparent 82%);
+        --architecture-metallic:linear-gradient(125deg,var(--brand-light-gold-deep) 8%,var(--brand-gold-primary) 40%,var(--brand-gold-bright) 58%,var(--brand-light-gold-highlight) 64%,var(--brand-light-gold-deep));
+        --architecture-accent:linear-gradient(115deg,var(--brand-light-gold-highlight),var(--brand-gold-bright) 38%,var(--brand-gold-primary) 72%,var(--brand-gold-bright));
+        --architecture-accent-hover:linear-gradient(115deg,var(--brand-light-gold-highlight),var(--brand-gold-bright) 52%,var(--brand-gold-primary));
+        --architecture-surface:var(--brand-light-porcelain);
+        --architecture-sidebar-surface:linear-gradient(165deg,var(--brand-light-porcelain) 30%,var(--brand-light-metallic-ivory) 60%,var(--brand-light-champagne-surface) 82%,var(--brand-light-porcelain));
+        --architecture-panel:linear-gradient(110deg,var(--brand-light-porcelain),var(--brand-light-champagne-surface) 22%,var(--brand-light-metallic-ivory) 64%,var(--brand-light-porcelain) 94%);
+        --architecture-edge:color-mix(in srgb,var(--brand-light-gold-deep) 32%,var(--brand-light-porcelain));
+        --architecture-shadow:color-mix(in srgb,var(--brand-light-material-shadow) 20%,transparent);
+        --architecture-ink:var(--brand-light-gold-deep);
+        --architecture-opacity:.95;
+        --architecture-sidebar-opacity:.95;
+        --architecture-art-width:4.4;
+        /* Repaint only the existing facade footprint; curves and mask geometry stay shared. */
+        --architecture-stroke:linear-gradient(110deg,var(--brand-gold-champagne),var(--brand-gold-ink) 46%,var(--brand-light-gold-highlight) 49%,var(--brand-gold-champagne) 53%,var(--brand-gold-ink)) right bottom/14.5% 72% no-repeat,var(--architecture-metallic);
+    }
+    .f-app::before,.f-app::after { content:''; position:fixed; inset:0; z-index:0; pointer-events:none; }
+    .f-app::before {
+        background:var(--architecture-stroke,var(--architecture-metallic)); opacity:var(--architecture-opacity);
+        mask:url('/images/promerty-atmosphere-mask.svg') center/100% 100% no-repeat;
+    }
+    .f-app::after { background:var(--architecture-edge-light,radial-gradient(ellipse at 98% 42%,var(--architecture-light),transparent 32rem)); }
+    :is(.f-sidebar,.ws-sidebar) {
+        background:var(--architecture-sidebar-surface,linear-gradient(165deg,var(--customer-surface) 52%,var(--architecture-surface)));
+        box-shadow:inset -1px 0 var(--architecture-edge);
+    }
+    :is(.f-sidebar,.ws-sidebar)::after {
+        content:''; position:absolute; inset:auto 0 0; height:min(25rem,38vh); z-index:0; pointer-events:none;
+        background:var(--architecture-metallic); opacity:var(--architecture-sidebar-opacity);
+        mask:url('/images/promerty-architecture-mask.svg') left bottom/100% 100% no-repeat;
+    }
+    .c-empty-editorial {
+        isolation:isolate;
+        background:var(--architecture-panel,radial-gradient(ellipse at 9% 60%,color-mix(in srgb,var(--architecture-surface) 90%,var(--brand-gold-primary)),var(--architecture-surface) 65%));
+        border-block-color:var(--architecture-edge);
+        box-shadow:0 18px 42px -30px var(--architecture-shadow);
+    }
+    .c-empty-editorial::before { background:var(--architecture-metallic); }
+    .c-empty-editorial::after {
+        content:''; position:absolute; inset:0; z-index:-1; pointer-events:none;
+        background:var(--architecture-metallic);
+        mask:url('/images/promerty-editorial-mask.svg') center/100% 100% no-repeat;
+    }
+    .c-empty-art { color:var(--architecture-ink); background:radial-gradient(ellipse at 50% 65%,var(--architecture-light),transparent 72%); }
+    .c-empty-art svg { stroke:var(--architecture-ink); stroke-width:var(--architecture-art-width); }
+    .c-empty-art-detail { stroke:var(--color-primary); stroke-width:calc(var(--architecture-art-width) * .68); }
+    [data-theme="light"] .c-empty-art svg { stroke:url(#promerty-empty-light-gold); }
+    .f-app .p-button--primary { background:var(--architecture-accent); border-color:var(--architecture-ink); }
+    .f-app .p-button--primary:hover { background:var(--architecture-accent-hover); }
+    .f-feed-tab[aria-pressed=true] { border-bottom-color:var(--architecture-ink); }
+    /* Opaque media surfaces stay unchanged; only the ambient ornament recedes. */
+    .f-app:has(.f-post video)::before { opacity:calc(var(--architecture-opacity) * .5); }
+    @media(max-width:760px) {
+        .f-app::before { opacity:.38; mask-size:auto 100%; mask-position:62% top; }
+        :is(.f-sidebar,.ws-sidebar)::after { display:none; }
+    }
+}

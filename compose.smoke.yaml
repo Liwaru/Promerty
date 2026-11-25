@@ -1,0 +1,48 @@
+# Local synthetic validation only, using a new Compose project and fresh media volumes.
+services:
+  app:
+    environment:
+      PROMERTY_LOCAL_SMOKE: "1"
+    networks: [smoke-db]
+    depends_on:
+      qa-db:
+        condition: service_healthy
+  worker:
+    environment:
+      PROMERTY_LOCAL_SMOKE: "1"
+    networks: [smoke-db]
+  web:
+    environment:
+      PROMERTY_SERVER_NAME: 127.0.0.1
+      PROMERTY_TRUSTED_PROXY: 127.0.0.1
+      PROMERTY_FCGI_HTTPS: "off"
+  qa-db:
+    image: mariadb:11.4
+    environment:
+      MARIADB_DATABASE: promerty_docker_smoke
+      MARIADB_USER: promerty_smoke
+      MARIADB_PASSWORD_FILE: /run/secrets/qa_db_password
+      MARIADB_ROOT_PASSWORD_FILE: /run/secrets/qa_db_root_password
+      MARIADB_ROOT_HOST: localhost
+    secrets: [qa_db_password, qa_db_root_password]
+    networks: [smoke-db]
+    volumes:
+      - smoke_db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 4s
+      retries: 18
+
+networks:
+  smoke-db:
+    internal: true
+
+volumes:
+  smoke_db:
+
+secrets:
+  qa_db_password:
+    file: ${PROMERTY_SMOKE_DB_PASSWORD_FILE:?set synthetic password file}
+  qa_db_root_password:
+    file: ${PROMERTY_SMOKE_ROOT_PASSWORD_FILE:?set synthetic root password file}

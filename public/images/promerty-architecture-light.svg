@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 260" fill="none">
+  <defs>
+    <linearGradient id="gold" x1="36" y1="230" x2="306" y2="72" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A67C00" stop-opacity=".9"/>
+      <stop offset=".4" stop-color="#D4AF37"/>
+      <stop offset=".57" stop-color="#E4BD4B"/>
+      <stop offset=".61" stop-color="#F2D675"/>
+      <stop offset=".65" stop-color="#D4AF37"/>
+      <stop offset="1" stop-color="#A67C00" stop-opacity=".9"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="60" y1="232" x2="298" y2="100" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A67C00" stop-opacity="0"/>
+      <stop offset=".72" stop-color="#E4BD4B" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#E4BD4B" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <!-- Existing skyline retained; tonal planes give the facade a foil-on-ivory finish. -->
+  <ellipse cx="244" cy="205" rx="138" ry="46" fill="#F2D675" fill-opacity=".15"/>
+  <polygon points="59,235 59,157 78,139 78,235" fill="#D4AF37" fill-opacity=".13"/>
+  <polygon points="264,225 264,113 290,91 290,219" fill="#F2D675" fill-opacity=".3"/>
+  <polygon points="290,91 310,103 310,214 290,219" fill="#A67C00" fill-opacity=".1"/>
+  <polygon points="0,248 107,225 205,238 360,190 360,260 0,260" fill="#D4AF37" fill-opacity=".06"/>
+  <g stroke="#A67C00" stroke-width=".8" opacity=".38">
+    <polyline points="103,235 103,194 132,182 151,193 151,232"/>
+    <polyline points="132,182 132,232"/>
+    <polyline points="108,204 132,194 146,202"/>
+    <polyline points="108,215 132,205 146,213"/>
+    <polyline points="108,226 132,216 146,224"/>
+  </g>
+  <path d="M0 238c49-4 68-21 107-20 38 1 58 17 98 9 43-8 73-41 155-51" stroke="url(#gold)" stroke-width="3.4"/>
+  <path d="M0 248c58-1 86-23 127-19 31 3 54 17 91 8 48-11 74-39 142-47" stroke="url(#glow)" stroke-width="3"/>
+  <path d="M34 235v-41l14-13v54m-9-43h8m-8 7h8m-8 7h8m-8 7h8m-8 7h8m-8 7h8M59 235V157l19-18v96m-13-77h12m-12 9h12m-12 9h12m-12 9h12m-12 9h12m-12 9h12m-12 9h12m-12 9h12m-12 9h12M84 235v-30l13-11v41m-9-36h8m-8 7h8m-8 7h8m-8 7h8m-8 7h8M264 225V113l26-22v128m-17-105h17m-17 11h17m-17 11h17m-17 11h17m-17 11h17m-17 11h17m-17 11h17m-17 11h17m-17 11h17m-17 11h17m-17 11h17m7 0v-78l17-15v93m-12-79h11m-11 10h11m-11 10h11m-11 10h11m-11 10h11m-11 10h11m-11 10h11m-11 10h11" stroke="url(#gold)" stroke-width="3.2"/>
+  <path d="m257 120 34-30 19 12M72 150l7-12 7 5m183-31 21-20 17 12" stroke="url(#gold)" stroke-width="3"/>
+  <path d="M0 238h360" stroke="url(#gold)" stroke-opacity=".35"/>
+</svg>

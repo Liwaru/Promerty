@@ -1,0 +1,89 @@
+/* Generated from design-tokens/promerty.json. Run npm run tokens; do not edit. */
+:root {
+    --brand-gold-primary: #D4AF37;
+    --brand-gold-soft: #E6C96A;
+    --brand-light-background: #FFFFFF;
+    --brand-light-surface: #F8FAFC;
+    --brand-dark-background: #111111;
+    --brand-dark-surface: #1F2937;
+    --brand-text-dark: #0F172A;
+    --brand-text-light: #F8FAFC;
+    --brand-gold-antique: #A88637;
+    --brand-gold-champagne: #B59A5B;
+    --brand-gold-bronze: #80682C;
+    --brand-light-ivory: #FAF9F6;
+    --brand-light-porcelain: #FFFDF9;
+    --brand-light-stone: #F6F3EA;
+    --brand-light-line: #DFCA88;
+    --brand-light-control-line: #9C8134;
+    --brand-gold-bright: #E4BD4B;
+    --brand-gold-deep: #B8860B;
+    --brand-gold-highlight: #F4D77A;
+    --brand-gold-ink: #8C650A;
+    --brand-gold-focus: #A47708;
+    --brand-light-gold-deep: #A67C00;
+    --brand-light-gold-highlight: #F2D675;
+    --brand-light-champagne-surface: #F2EDE3;
+    --brand-light-metallic-ivory: #F8F5EF;
+    --brand-light-material-shadow: #9B8E74;
+    color-scheme: light;
+    --color-bg: var(--brand-light-ivory);
+    --color-surface: var(--brand-light-stone);
+    --color-card: var(--brand-light-porcelain);
+    --color-primary: var(--brand-gold-primary);
+    --color-primary-soft: var(--brand-gold-bright);
+    --color-on-primary: #151A22;
+    --color-text: #1B2230;
+    --color-text-muted: #56606B;
+    --color-border: var(--brand-light-line);
+    --color-control-border: var(--brand-light-control-line);
+    --color-disabled: #E9E5DC;
+    --color-disabled-text: #676B72;
+    --color-error: #B91C1C;
+    --color-on-error: var(--brand-light-background);
+    --color-success: #166534;
+    --color-warning: #854D0E;
+    --color-info: #1D4ED8;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) {
+    color-scheme: dark;
+    --color-bg: var(--brand-dark-background);
+    --color-surface: var(--brand-dark-surface);
+    --color-card: var(--brand-dark-surface);
+    --color-primary: var(--brand-gold-primary);
+    --color-primary-soft: var(--brand-gold-soft);
+    --color-on-primary: var(--brand-text-dark);
+    --color-text: var(--brand-text-light);
+    --color-text-muted: #B8C2D0;
+    --color-border: #475569;
+    --color-control-border: #94A3B8;
+    --color-disabled: #374151;
+    --color-disabled-text: #94A3B8;
+    --color-error: #FCA5A5;
+    --color-on-error: var(--brand-text-dark);
+    --color-success: #86EFAC;
+    --color-warning: #FDE68A;
+    --color-info: #93C5FD;
+  }
+}
+[data-theme="dark"] {
+    color-scheme: dark;
+    --color-bg: var(--brand-dark-background);
+    --color-surface: var(--brand-dark-surface);
+    --color-card: var(--brand-dark-surface);
+    --color-primary: var(--brand-gold-primary);
+    --color-primary-soft: var(--brand-gold-soft);
+    --color-on-primary: var(--brand-text-dark);
+    --color-text: var(--brand-text-light);
+    --color-text-muted: #B8C2D0;
+    --color-border: #475569;
+    --color-control-border: #94A3B8;
+    --color-disabled: #374151;
+    --color-disabled-text: #94A3B8;
+    --color-error: #FCA5A5;
+    --color-on-error: var(--brand-text-dark);
+    --color-success: #86EFAC;
+    --color-warning: #FDE68A;
+    --color-info: #93C5FD;
+}

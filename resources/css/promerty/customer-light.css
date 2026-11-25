@@ -1,0 +1,32 @@
+/* Light component colors. Shared architecture lives in customer-architecture.css. */
+@layer components {
+    [data-theme="light"] :is(.f-app,.ws-sidebar) {
+        --customer-surface:var(--brand-light-porcelain);
+        --customer-raised:var(--brand-light-stone);
+        --customer-nav-hover:color-mix(in srgb,var(--brand-gold-primary) 12%,var(--brand-light-porcelain));
+        --customer-line:var(--brand-light-line);
+        --customer-control-line:var(--brand-light-control-line);
+        --customer-gold-ink:var(--brand-gold-ink);
+    }
+    [data-theme="light"] .f-app .c-more-drawer {
+        border-color:color-mix(in srgb,var(--brand-light-gold-deep) 48%,var(--brand-light-porcelain));
+        box-shadow:0 12px 28px rgb(45 34 13 / .10);
+    }
+    [data-theme="light"] .c-more-body h3,
+    [data-theme="light"] .c-more-appearance legend { color:var(--brand-gold-ink); }
+    [data-theme="light"] .c-theme-segments { border-color:var(--brand-light-control-line); }
+    [data-theme="light"] .c-theme-segments input:checked + span { background:linear-gradient(115deg,color-mix(in srgb,var(--brand-gold-primary) 24%,var(--brand-light-porcelain)),color-mix(in srgb,var(--brand-light-gold-highlight) 18%,var(--brand-light-porcelain))); box-shadow:inset 0 0 0 1px var(--brand-light-gold-deep); }
+    [data-theme="light"] .c-theme-segments input:checked + span .p-icon,
+    [data-theme="light"] :is(.f-app,.ws-sidebar) .f-nav[aria-current=page] .p-icon,
+    [data-theme="light"] :is(.f-app,.ws-sidebar) .f-nav[aria-expanded=true] { color:var(--brand-light-gold-deep); }
+    [data-theme="light"] :is(.f-app,.ws-sidebar) .f-nav[aria-current=page]::before,
+    [data-theme="light"] :is(.f-app,.ws-sidebar) .f-nav[aria-expanded=true]::after { background:var(--brand-light-gold-deep); }
+    [data-theme="light"] .f-feed-tab[aria-pressed=true],
+    [data-theme="light"] .s-result-tabs [aria-current] { border-bottom-color:var(--brand-light-gold-deep); }
+    [data-theme="light"] :is(.f-app,.ws-sidebar) .f-nav[aria-current=page] { background:linear-gradient(110deg,color-mix(in srgb,var(--brand-gold-primary) 20%,var(--brand-light-porcelain)),color-mix(in srgb,var(--brand-light-gold-highlight) 12%,var(--brand-light-porcelain))); }
+    [data-theme="light"] .f-app .c-auth-dialog,
+    [data-theme="light"] .f-app .p-modal,
+    [data-theme="light"] .f-app .p-sheet { box-shadow:0 16px 44px rgb(45 34 13 / .14); }
+    [data-theme="light"] .c-auth-dialog::backdrop { background:rgb(30 36 48 / .38); }
+    [data-theme="light"] .f-app :focus-visible { outline:2px solid var(--brand-light-gold-deep); outline-offset:3px; box-shadow:0 0 0 4px var(--brand-light-porcelain); }
+}

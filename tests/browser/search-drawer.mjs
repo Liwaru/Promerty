@@ -1,0 +1,73 @@
+export default async function(page){
+    const check=(value,message)=>{if(!value)throw new Error(message);};
+    const root='C:/Users/Hendra Huang/Documents/new laravel/Promerty/docs/customer/qa/';
+    const errors=[],bad=[];page.on('pageerror',error=>errors.push(error.message));page.on('response',r=>{if(r.status()>=400)bad.push(r.status()+' '+r.url());});
+    await page.setViewportSize({width:1366,height:768});await page.goto('http://localhost:8000/search');
+    await page.waitForFunction(()=>document.querySelector('#search-results').getAttribute('aria-busy')==='false');
+    check(await page.locator('.s-main-filters label').count()===4,'four primary filters');
+    check(await page.locator('.s-advanced-grid label').count()===6,'six advanced filters');
+    check(!await page.getByText('Khusus wilayah Kota Batam.',{exact:true}).count(),'removed scope text');
+    const main=await page.locator('.s-main').boundingBox();
+    await page.locator('#sidebar-search button').click();await page.waitForTimeout(260);
+    check(await page.locator('#search-drawer-input').evaluate(e=>e===document.activeElement),'autofocus');
+    check(Math.abs((await page.locator('.f-sidebar').boundingBox()).width-76)<1,'76px icon rail');
+    const after=await page.locator('.s-main').boundingBox();check(Math.abs(main.x-after.x)<1&&Math.abs(main.width-after.width)<1,'main content must not move');
+    await page.locator('#search-drawer-input').fill('batam c');await page.waitForTimeout(650);
+    check(await page.locator('[data-query="Batam Center"]').count()===1,'Batam partial suggestion');
+    await page.locator('#search-drawer-input').fill('beng');await page.waitForTimeout(650);
+    check(await page.locator('[data-query="Bengkong"]').count()===1,'Bengkong partial suggestion');
+    await page.keyboard.press('ArrowDown');check(await page.evaluate(()=>document.activeElement.dataset.query)==='Bengkong','arrow suggestion focus');
+    await page.keyboard.press('Escape');await page.waitForTimeout(240);
+    check(await page.locator('#sidebar-search button').evaluate(e=>e===document.activeElement),'restore trigger focus');
+    await page.locator('#sidebar-search button').click();await page.locator('#search-drawer-input').fill('unsent draft');
+    await page.getByRole('button',{name:'Tutup Cari Properti',exact:true}).click();await page.waitForTimeout(240);
+    check(!await page.locator('#customer-search-drawer').evaluate(d=>d.open),'X closes disposable query without discard modal');
+    await page.locator('#sidebar-search button').click();await page.waitForTimeout(260);
+    const wasOpen=await page.locator('#search-filters').evaluate(d=>d.open);
+    await page.mouse.click(1100,250);await page.waitForTimeout(240);
+    check(!await page.locator('#customer-search-drawer').evaluate(d=>d.open),'outside closes');check(wasOpen===await page.locator('#search-filters').evaluate(d=>d.open),'no click through');
+    await page.locator('#sidebar-search button').click();await page.locator('.f-sidebar [data-feed-action=settings]').click();await page.waitForTimeout(250);
+    check(await page.locator('#customer-more').evaluate(d=>d.open)&&!await page.locator('#customer-search-drawer').evaluate(d=>d.open),'search to more exclusive');
+    await page.locator('#sidebar-search button').click();await page.waitForTimeout(250);
+    check(!await page.locator('#customer-more').evaluate(d=>d.open)&&await page.locator('#customer-search-drawer').evaluate(d=>d.open),'more to search exclusive');
+    await page.evaluate(()=>{const t=document.querySelector('#sidebar-search button'),x=document.querySelector('#customer-search-drawer [data-dialog-close]');for(let i=0;i<5;i++){x.click();t.click();}});await page.waitForTimeout(400);
+    check(await page.locator('#customer-search-drawer').evaluate(d=>d.open&&!d.inert&&d.dataset.dialogState==='open'),'rapid reopen settles open');
+    await page.locator('#search-drawer-input').fill('sewa rumah 2 lantai di Bengkong');await page.keyboard.press('Enter');
+    await page.waitForURL('**/search?*q=sewa+rumah+2+lantai+di+Bengkong');
+    await page.waitForFunction(()=>document.querySelectorAll('#search-grid .s-card').length===2);
+    check((await page.locator('#search-interpretation').innerText()).includes('2 lantai'),'visible interpretation');
+    check((await page.locator('#search-grid').innerText()).includes('Bengkong'),'combined result');
+    const resultUrl=page.url();
+    await page.locator('#sidebar-search button').click();await page.locator('#search-drawer-input').fill('');await page.waitForTimeout(50);
+    check(await page.locator('[data-query="sewa rumah 2 lantai di Bengkong"]').count()===1,'own recent query');
+    await page.locator('[data-search-clear]').click();check(!(await page.locator('[data-search-options]').innerText()).includes('sewa rumah 2 lantai di Bengkong'),'clear recent');
+    await page.locator('#search-drawer-input').fill('Jakarta');await page.keyboard.press('Enter');await page.waitForURL('**q=Jakarta');
+    await page.waitForFunction(()=>document.querySelector('#search-state').textContent.includes('Belum ada hasil'));
+    await page.goBack();await page.waitForURL(resultUrl);await page.waitForFunction(()=>document.querySelectorAll('#search-grid .s-card').length===2);
+    await page.goForward();await page.waitForURL('**q=Jakarta');await page.waitForFunction(()=>document.querySelector('#search-state').textContent.includes('Belum ada hasil'));
+    await page.goto('http://localhost:8000/search');await page.waitForFunction(()=>document.querySelector('#search-results').getAttribute('aria-busy')==='false');
+    await page.screenshot({path:root+'search-drawer-page.png'});
+    const viewports=[];
+    for(const [width,height] of [[1440,900],[1366,768],[768,1024],[390,844],[320,568]]){
+        await page.setViewportSize({width,height});await page.waitForTimeout(150);
+        if(width<=760)await page.goto('http://localhost:8000/');
+        const trigger=width>760?page.locator('#sidebar-search button'):page.locator('.f-header [data-feed-action=search]');
+        await trigger.click();await page.waitForTimeout(280);
+        const bounds=await page.locator('#customer-search-drawer').boundingBox();
+        check(bounds.x>=0&&bounds.x+bounds.width<=width+1,'drawer within viewport '+width);
+        check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'no horizontal overflow '+width);
+        check(await page.locator('#search-drawer-input').evaluate(e=>e===document.activeElement),'focus '+width);
+        if(width===1366){for(const theme of ['dark','light']){await page.evaluate(t=>window.PromertyTheme.set(t),theme);await page.waitForTimeout(250);await page.screenshot({path:root+'search-drawer-'+theme+'.png'});}}
+        if(width===320){await page.screenshot({path:root+'search-drawer-mobile.png'});check(await page.locator('#customer-search-drawer').evaluate(d=>d.matches(':modal')),'mobile is modal');}
+        viewports.push({width,height,bounds});await page.keyboard.press('Escape');await page.waitForTimeout(250);
+    }
+    await page.setViewportSize({width:1366,height:768});await page.goto('http://localhost:8000/');await page.waitForTimeout(700);
+    await page.waitForFunction(()=>document.querySelectorAll('.f-post').length>1);
+    await page.locator('#feed-scroll').evaluate(e=>e.scrollTo({top:e.clientHeight,behavior:'instant'}));await page.waitForTimeout(300);const scroll=await page.locator('#feed-scroll').evaluate(e=>e.scrollTop);
+    check(scroll>100,'feed must be actually scrolled for restoration check');
+    await page.locator('#sidebar-search button').click();await page.keyboard.press('Escape');await page.waitForTimeout(250);
+    check(await page.locator('#feed-scroll').evaluate(e=>e.scrollTop)===scroll,'feed scroll retained');
+    await page.locator('#feed-account').click();await page.waitForTimeout(250);check(await page.getByRole('heading',{name:'Masuk Ke Promerty',exact:true}).isVisible(),'login modal');await page.keyboard.press('Escape');await page.waitForTimeout(250);
+    check(!errors.length,'JS errors '+errors.join(';'));check(!bad.length,'failed requests '+bad.join(';'));
+    return {status:'PASS',viewports,feedScroll:scroll,errors,bad};
+}

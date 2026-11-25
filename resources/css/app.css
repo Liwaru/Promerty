@@ -1,0 +1,67 @@
+@import 'tailwindcss';
+@import './promerty/tokens.css';
+@import './promerty/foundation.css';
+@import './promerty/feed.css';
+@import './promerty/scrollbars.css';
+@import './promerty/customer.css';
+@import './promerty/search.css';
+@import './promerty/more-drawer.css';
+@import './promerty/search-drawer.css';
+@import './promerty/dialogs.css';
+@import './promerty/customer-light.css';
+@import './promerty/customer-architecture.css';
+@import './promerty/video-viewer.css';
+@import './promerty/agent.css';
+@import './promerty/operations.css';
+
+.p-email-otp {
+    inline-size: min(100%, 32rem);
+    margin-inline: auto;
+}
+
+.p-email-otp fieldset {
+    min-inline-size: 0;
+}
+
+.p-email-otp-digits {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: clamp(.25rem, 2vw, .625rem);
+    margin-block-start: .5rem;
+}
+
+.p-email-otp-digits .p-input {
+    min-inline-size: 0;
+    padding-inline: 0;
+    text-align: center;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.p-email-otp-digits [aria-invalid="true"] {
+    border-color: var(--color-error);
+}
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme inline {
+    --color-background: var(--color-bg);
+    --color-panel: var(--color-card);
+    --color-brand: var(--color-primary);
+    --color-brand-soft: var(--color-primary-soft);
+    --color-foreground: var(--color-text);
+    --color-muted: var(--color-text-muted);
+    --color-outline: var(--color-border);
+    --color-danger: var(--color-error);
+    --font-heading: Georgia, 'Times New Roman', serif;
+}

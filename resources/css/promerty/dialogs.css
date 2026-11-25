@@ -1,0 +1,20 @@
+@layer components {
+    html.p-modal-active, .p-modal-active body { overflow:hidden; }
+    .p-managed-dialog { overscroll-behavior:contain; }
+    .p-dialog-feedback { position:sticky; bottom:0; padding:.65rem; border:1px solid var(--color-control-border); border-radius:.375rem; background:var(--color-card); color:var(--color-text); font-size:.875rem; }
+    .p-discard-dialog { width:min(420px,calc(100vw - 2rem)); }
+    .p-discard-dialog h2 { font-size:1.5rem; margin-bottom:.75rem; }
+    .p-discard-dialog p { margin-bottom:1.25rem; }
+    .p-discard-dialog::backdrop { background:var(--color-overlay); }
+    @media(prefers-reduced-motion:no-preference) {
+        .f-sidebar { transition:width 180ms cubic-bezier(.2,.7,.2,1),padding 180ms cubic-bezier(.2,.7,.2,1); }
+        .f-sidebar .f-nav,.f-sidebar-brand,.f-compact-search { transition:gap 160ms ease,background-color 140ms ease,color 140ms ease; }
+        .f-sidebar-brand span,.f-nav span,.f-compact-search input { transition:opacity 130ms ease,max-width 180ms ease; }
+        .p-dropdown[open] .p-dropdown-menu { animation:p-popover-in 160ms ease; }
+        .p-managed-dialog[data-dialog-state=opening]::backdrop { animation:p-backdrop-in 200ms ease both; }
+        .p-managed-dialog[data-dialog-state=closing]::backdrop { animation:p-backdrop-out 180ms ease both; }
+    }
+    @keyframes p-popover-in { from {opacity:0;transform:translateY(-4px);} to {opacity:1;transform:none;} }
+    @keyframes p-backdrop-in { from {opacity:0;} to {opacity:1;} }
+    @keyframes p-backdrop-out { from {opacity:1;} to {opacity:0;} }
+}

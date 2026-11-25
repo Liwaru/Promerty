@@ -1,0 +1,1869 @@
+{
+  "roles": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "name",
+        "type_name": "varchar",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "level",
+        "type_name": "tinyint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "updated_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": [
+      {
+        "columns": [
+          "level"
+        ],
+        "unique": true,
+        "primary": false
+      },
+      {
+        "columns": [
+          "name"
+        ],
+        "unique": true,
+        "primary": false
+      }
+    ]
+  },
+  "permissions": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "name",
+        "type_name": "varchar",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "description",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "updated_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": [
+      {
+        "columns": [
+          "name"
+        ],
+        "unique": true,
+        "primary": false
+      }
+    ]
+  },
+  "role_permissions": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "role_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "permission_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "updated_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": [
+      {
+        "columns": [
+          "role_id",
+          "permission_id"
+        ],
+        "unique": true,
+        "primary": false
+      }
+    ]
+  },
+  "users": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "role_id",
+        "type_name": "bigint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "branch_id",
+        "type_name": "bigint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "name",
+        "type_name": "varchar",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "username",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "email",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "phone",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "phone_verified_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "email_verified_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "password",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "remember_token",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "photo",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "bio",
+        "type_name": "text",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "whatsapp",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "status",
+        "type_name": "enum",
+        "nullable": false,
+        "default": "'active'"
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "updated_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "deleted_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": [
+      {
+        "columns": [
+          "phone"
+        ],
+        "unique": true,
+        "primary": false
+      },
+      {
+        "columns": [
+          "username"
+        ],
+        "unique": true,
+        "primary": false
+      },
+      {
+        "columns": [
+          "email"
+        ],
+        "unique": true,
+        "primary": false
+      }
+    ]
+  },
+  "agencies": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "name",
+        "type_name": "varchar",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "slug",
+        "type_name": "varchar",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "address",
+        "type_name": "text",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "phone",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "status",
+        "type_name": "enum",
+        "nullable": false,
+        "default": "'active'"
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "updated_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "deleted_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": [
+      {
+        "columns": [
+          "slug"
+        ],
+        "unique": true,
+        "primary": false
+      }
+    ]
+  },
+  "branches": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "agency_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "name",
+        "type_name": "varchar",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "address",
+        "type_name": "text",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "phone",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "status",
+        "type_name": "enum",
+        "nullable": false,
+        "default": "'active'"
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "updated_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "deleted_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": [
+      {
+        "columns": [
+          "agency_id",
+          "name"
+        ],
+        "unique": true,
+        "primary": false
+      }
+    ]
+  },
+  "agent_profiles": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "user_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "professional_name",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "license_number",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "verification_status",
+        "type_name": "enum",
+        "nullable": false,
+        "default": "'pending'"
+      },
+      {
+        "name": "verified_by",
+        "type_name": "bigint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "verified_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "verification_note",
+        "type_name": "text",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "updated_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": [
+      {
+        "columns": [
+          "user_id"
+        ],
+        "unique": true,
+        "primary": false
+      }
+    ]
+  },
+  "property_categories": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "name",
+        "type_name": "varchar",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "slug",
+        "type_name": "varchar",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "updated_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": [
+      {
+        "columns": [
+          "slug"
+        ],
+        "unique": true,
+        "primary": false
+      },
+      {
+        "columns": [
+          "name"
+        ],
+        "unique": true,
+        "primary": false
+      }
+    ]
+  },
+  "posts": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "user_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "listing_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "caption",
+        "type_name": "text",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "content_type",
+        "type_name": "enum",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "status",
+        "type_name": "enum",
+        "nullable": false,
+        "default": "'draft'"
+      },
+      {
+        "name": "moderation_status",
+        "type_name": "enum",
+        "nullable": false,
+        "default": "'active'"
+      },
+      {
+        "name": "moderated_by",
+        "type_name": "bigint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "moderated_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "moderation_reason",
+        "type_name": "text",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "published_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "updated_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "deleted_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": []
+  },
+  "post_media": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "post_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "media_type",
+        "type_name": "enum",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "file_url",
+        "type_name": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "thumbnail_url",
+        "type_name": "text",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "sort_order",
+        "type_name": "smallint",
+        "nullable": false,
+        "default": "1"
+      },
+      {
+        "name": "file_size_bytes",
+        "type_name": "bigint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "duration_seconds",
+        "type_name": "decimal",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "width",
+        "type_name": "int",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "height",
+        "type_name": "int",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "updated_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": [
+      {
+        "columns": [
+          "post_id",
+          "sort_order"
+        ],
+        "unique": true,
+        "primary": false
+      }
+    ]
+  },
+  "listings": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "listing_code",
+        "type_name": "varchar",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "listing_type",
+        "type_name": "enum",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "transaction_type",
+        "type_name": "enum",
+        "nullable": false,
+        "default": "'sale'"
+      },
+      {
+        "name": "agent_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "branch_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "category_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "project_id",
+        "type_name": "bigint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "secondary_property_id",
+        "type_name": "bigint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "title",
+        "type_name": "varchar",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "unit_type",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "description",
+        "type_name": "text",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "price",
+        "type_name": "decimal",
+        "nullable": false,
+        "default": "0.00"
+      },
+      {
+        "name": "price_period",
+        "type_name": "enum",
+        "nullable": false,
+        "default": "'total'"
+      },
+      {
+        "name": "negotiable",
+        "type_name": "tinyint",
+        "nullable": false,
+        "default": "0"
+      },
+      {
+        "name": "bedrooms",
+        "type_name": "smallint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "bathrooms",
+        "type_name": "smallint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "land_area",
+        "type_name": "decimal",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "building_area",
+        "type_name": "decimal",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "floors",
+        "type_name": "smallint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "certificate",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "furnishing",
+        "type_name": "enum",
+        "nullable": false,
+        "default": "'unknown'"
+      },
+      {
+        "name": "orientation",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "electricity",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "additional_specs",
+        "type_name": "longtext",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "status",
+        "type_name": "enum",
+        "nullable": false,
+        "default": "'draft'"
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "updated_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "deleted_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": [
+      {
+        "columns": [
+          "listing_code"
+        ],
+        "unique": true,
+        "primary": false
+      }
+    ]
+  },
+  "locations": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "label",
+        "type_name": "varchar",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "address",
+        "type_name": "text",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "district",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "city",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "province",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "postal_code",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "latitude",
+        "type_name": "decimal",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "longitude",
+        "type_name": "decimal",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "public_latitude",
+        "type_name": "decimal",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "public_longitude",
+        "type_name": "decimal",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "public_radius_m",
+        "type_name": "int",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "visibility",
+        "type_name": "enum",
+        "nullable": false,
+        "default": "'approximate'"
+      },
+      {
+        "name": "google_place_id",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "google_maps_url",
+        "type_name": "text",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "created_by",
+        "type_name": "bigint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "updated_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "deleted_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": []
+  },
+  "projects": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "developer_id",
+        "type_name": "bigint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "location_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "name",
+        "type_name": "varchar",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "description",
+        "type_name": "text",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "facilities",
+        "type_name": "longtext",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "status",
+        "type_name": "enum",
+        "nullable": false,
+        "default": "'active'"
+      },
+      {
+        "name": "created_by",
+        "type_name": "bigint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "updated_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "deleted_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": []
+  },
+  "secondary_properties": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "property_code",
+        "type_name": "varchar",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "category_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "location_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "title",
+        "type_name": "varchar",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "created_by",
+        "type_name": "bigint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "updated_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "deleted_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": [
+      {
+        "columns": [
+          "property_code"
+        ],
+        "unique": true,
+        "primary": false
+      }
+    ]
+  },
+  "likes": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "user_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "post_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": [
+      {
+        "columns": [
+          "user_id",
+          "post_id"
+        ],
+        "unique": true,
+        "primary": false
+      }
+    ]
+  },
+  "comments": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "user_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "post_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "parent_id",
+        "type_name": "bigint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "content",
+        "type_name": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "moderation_status",
+        "type_name": "enum",
+        "nullable": false,
+        "default": "'active'"
+      },
+      {
+        "name": "moderated_by",
+        "type_name": "bigint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "moderated_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "moderation_reason",
+        "type_name": "text",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "updated_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "deleted_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": []
+  },
+  "saves": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "user_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "post_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": [
+      {
+        "columns": [
+          "user_id",
+          "post_id"
+        ],
+        "unique": true,
+        "primary": false
+      }
+    ]
+  },
+  "follows": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "follower_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "following_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": [
+      {
+        "columns": [
+          "follower_id",
+          "following_id"
+        ],
+        "unique": true,
+        "primary": false
+      }
+    ]
+  },
+  "shares": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "post_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "user_id",
+        "type_name": "bigint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "session_id",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "platform",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": []
+  },
+  "download_sessions": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "post_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "user_id",
+        "type_name": "bigint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "session_id",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": []
+  },
+  "download_items": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "download_session_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "post_media_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": [
+      {
+        "columns": [
+          "download_session_id",
+          "post_media_id"
+        ],
+        "unique": true,
+        "primary": false
+      }
+    ]
+  },
+  "survey_requests": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "customer_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "listing_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "agent_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "requested_at",
+        "type_name": "datetime",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "proposed_at",
+        "type_name": "datetime",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "note",
+        "type_name": "text",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "status",
+        "type_name": "enum",
+        "nullable": false,
+        "default": "'pending'"
+      },
+      {
+        "name": "cancelled_by",
+        "type_name": "bigint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "cancellation_reason",
+        "type_name": "text",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "completed_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "updated_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "deleted_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": []
+  },
+  "conversations": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "type",
+        "type_name": "enum",
+        "nullable": false,
+        "default": "'direct'"
+      },
+      {
+        "name": "created_by",
+        "type_name": "bigint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "status",
+        "type_name": "enum",
+        "nullable": false,
+        "default": "'active'"
+      },
+      {
+        "name": "last_message_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "updated_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "deleted_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": []
+  },
+  "conversation_members": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "conversation_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "user_id",
+        "type_name": "bigint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "member_role",
+        "type_name": "enum",
+        "nullable": false,
+        "default": "'customer'"
+      },
+      {
+        "name": "guest_name",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "guest_email",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "guest_phone",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "guest_token",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "joined_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "current_timestamp()"
+      },
+      {
+        "name": "last_read_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "updated_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": [
+      {
+        "columns": [
+          "conversation_id",
+          "user_id"
+        ],
+        "unique": true,
+        "primary": false
+      }
+    ]
+  },
+  "messages": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "conversation_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "sender_member_id",
+        "type_name": "bigint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "message_type",
+        "type_name": "enum",
+        "nullable": false,
+        "default": "'text'"
+      },
+      {
+        "name": "body",
+        "type_name": "text",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "media_url",
+        "type_name": "text",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "post_id",
+        "type_name": "bigint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "listing_id",
+        "type_name": "bigint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "unsent_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "updated_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "deleted_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": []
+  },
+  "post_views": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "post_id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "user_id",
+        "type_name": "bigint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "session_id",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "watch_duration_seconds",
+        "type_name": "decimal",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "completed",
+        "type_name": "tinyint",
+        "nullable": false,
+        "default": "0"
+      },
+      {
+        "name": "viewed_at",
+        "type_name": "timestamp",
+        "nullable": false,
+        "default": "current_timestamp()"
+      }
+    ],
+    "indexes": []
+  },
+  "app_settings": {
+    "columns": [
+      {
+        "name": "id",
+        "type_name": "bigint",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "setting_key",
+        "type_name": "varchar",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "setting_value",
+        "type_name": "longtext",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "data_type",
+        "type_name": "enum",
+        "nullable": false,
+        "default": "'string'"
+      },
+      {
+        "name": "description",
+        "type_name": "varchar",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "updated_by",
+        "type_name": "bigint",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "created_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      },
+      {
+        "name": "updated_at",
+        "type_name": "timestamp",
+        "nullable": true,
+        "default": "NULL"
+      }
+    ],
+    "indexes": [
+      {
+        "columns": [
+          "setting_key"
+        ],
+        "unique": true,
+        "primary": false
+      }
+    ]
+  }
+}

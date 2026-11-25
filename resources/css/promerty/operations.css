@@ -1,0 +1,20 @@
+.o-filters{display:flex;flex-wrap:wrap;align-items:end;gap:1rem;margin:1.5rem 0}.o-filters .p-field{flex:1 1 160px;min-width:0}.o-filters input,.o-filters select{width:100%;min-width:0}
+.o-records{display:grid;gap:1rem;margin-top:1.5rem}.o-records .a-listing{align-items:start}.o-records .a-listing>*{min-width:0}.o-records h2{font-size:1.35rem;overflow-wrap:anywhere}.o-pagination{margin-top:1.5rem}.o-workspace .a-main{min-width:0;overflow-wrap:anywhere}
+.o-workspace .a-summary{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}.o-workspace .a-listing form{max-width:320px}.o-workspace .p-brand{display:flex;align-items:center;gap:.5rem}
+.o-account-form { padding:.75rem; border:1px solid var(--color-border); border-radius:var(--radius-sm); }
+.o-account-form summary { cursor:pointer; min-height:44px; align-content:center; }
+.o-account-form form { margin-block:.75rem 0; }
+@media(max-width:700px){.o-workspace .a-main{margin-left:0;padding:1rem}.o-records .a-listing{grid-template-columns:minmax(0,1fr)}.o-workspace .a-listing form{max-width:none;width:100%}.o-filters>*{max-width:100%}}
+.o-role-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,8rem),1fr));gap:.75rem;margin:0;padding:0;list-style:none}
+.o-role-summary li{display:grid;padding:.75rem;border:1px solid var(--color-border);border-radius:var(--radius-sm)}
+.o-role-summary span,.o-access-table small,.o-access-table code{color:var(--color-text-muted);font-size:.8rem}
+.o-access-scroll{max-width:100%;overflow:auto;border:1px solid var(--color-border);border-radius:var(--radius-sm)}
+.o-access-table{width:100%;border-collapse:collapse;background:var(--color-card);text-align:start}
+.o-access-table :is(th,td){padding:.65rem .8rem;border-block-end:1px solid var(--color-border);text-align:start}
+.o-access-table th[scope=row]{min-width:13rem}.o-access-table code{display:block;overflow-wrap:anywhere}
+.o-access-group th{background:var(--color-accent-subtle);color:var(--agent-gold-ink)}
+.o-access-toggle{display:inline-flex;align-items:center;min-height:44px;gap:.55rem;cursor:pointer}
+.o-access-toggle input{width:1.1rem;height:1.1rem;accent-color:var(--color-primary);flex:none}
+.o-access-toggle input:checked ~ .o-only-off,.o-access-toggle input:not(:checked) ~ .o-only-on{display:none}
+.o-access-actions{justify-content:space-between;padding-block:.35rem;border-block-end:1px solid var(--color-border)}
+@media(max-width:760px){.o-owner-workspace .ws-nav{max-height:min(60dvh,30rem)}}

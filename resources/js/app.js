@@ -1,0 +1,14 @@
+import './bootstrap';
+import {initializeDialogs} from './dialogs';
+import {bindPasswordPolicy} from './password-policy';
+import './design-system';
+import './customer-navigation';
+import './feed';
+import './search';
+import './search-viewer';
+import './agent';
+import './operations';
+import './workspace-sidebar';
+import './email-otp';
+initializeDialogs();
+document.querySelectorAll('[data-password-policy]').forEach(form => bindPasswordPolicy(form));
